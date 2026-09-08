@@ -1,0 +1,40 @@
+name: Update RAG corpus
+
+on:
+  schedule:
+    # Tous les lundis à 6h UTC — ajuste si tu veux une autre fréquence
+    - cron: "0 6 * * 1"
+  workflow_dispatch: {}  # permet aussi de le lancer manuellement depuis l'onglet Actions
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Installer les dépendances
+        run: pip install -r requirements.txt
+
+      - name: Lancer le pipeline de mise à jour
+        env:
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+        run: python -m scripts.update_pipeline
+
+      - name: Committer le corpus mis à jour (si changement)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -f data/processed/chunks.json
+          git diff --staged --quiet || git commit -m "Auto-update: nouveaux filings SEC detectes"
+          git push
+
+      - name: Sauvegarder l'index vectoriel en artefact
+        uses: actions/upload-artifact@v4
+        with:
+          name: chroma_db
+          path: chroma_db/
+          retention-days: 14

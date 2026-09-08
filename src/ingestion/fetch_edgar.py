@@ -1,6 +1,11 @@
 """
 Récupère les filings 10-K des entreprises listées dans src/config.py depuis SEC EDGAR.
 
+Idempotent : si un filing a déjà été téléchargé (même fichier de sortie déjà présent),
+il est ignoré. Ça permet de relancer ce script régulièrement (à la main ou via une tâche
+planifiée) sans re-télécharger ce qui existe déjà, et de ne détecter que les vrais
+nouveaux dépôts.
+
 Usage :
     python -m src.ingestion.fetch_edgar
 """
@@ -34,7 +39,6 @@ def get_ticker_to_cik_map() -> dict:
     resp = requests.get(TICKERS_URL, headers=HEADERS, timeout=15)
     resp.raise_for_status()
     data = resp.json()
-    # Le JSON est indexé par des entiers ; chaque valeur = {"cik_str":..., "ticker":..., "title":...}
     return {entry["ticker"]: str(entry["cik_str"]).zfill(10) for entry in data.values()}
 
 
@@ -57,6 +61,11 @@ def get_filings(cik: str) -> list[dict]:
     return filings
 
 
+def filing_output_path(filing: dict, ticker: str) -> Path:
+    out_dir = Path(RAW_DATA_DIR) / ticker
+    return out_dir / f"{filing['form']}_{filing['filingDate']}_{filing['primaryDocument']}"
+
+
 def download_filing(cik: str, filing: dict, ticker: str) -> Path:
     """Télécharge le document principal d'un filing et le sauvegarde localement."""
     cik_no_zeros = str(int(cik))
@@ -70,16 +79,18 @@ def download_filing(cik: str, filing: dict, ticker: str) -> Path:
     resp = requests.get(url, headers=HEADERS, timeout=30)
     resp.raise_for_status()
 
-    out_dir = Path(RAW_DATA_DIR) / ticker
-    out_dir.mkdir(parents=True, exist_ok=True)
-    out_path = out_dir / f"{filing['form']}_{filing['filingDate']}_{filing['primaryDocument']}"
+    out_path = filing_output_path(filing, ticker)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_bytes(resp.content)
     return out_path
 
 
-def main():
+def main() -> int:
+    """Retourne le nombre de nouveaux filings effectivement téléchargés (0 si rien de neuf)."""
     print("Récupération du mapping ticker -> CIK...")
     ticker_to_cik = get_ticker_to_cik_map()
+
+    new_count = 0
 
     for ticker in COMPANIES:
         cik = ticker_to_cik.get(ticker)
@@ -88,7 +99,7 @@ def main():
             continue
 
         print(f"\n{ticker} (CIK {cik})")
-        time.sleep(0.2)  # respecte le rate limit SEC (~10 req/s max)
+        time.sleep(0.2)
 
         filings = get_filings(cik)
         matching = [f for f in filings if f["form"] in FORM_TYPES][:FILINGS_PER_COMPANY]
@@ -98,10 +109,19 @@ def main():
             continue
 
         for filing in matching:
+            out_path = filing_output_path(filing, ticker)
+            if out_path.exists():
+                print(f"  = {filing['form']} déposé le {filing['filingDate']} déjà présent, skip.")
+                continue
+
             time.sleep(0.2)
-            path = download_filing(cik, filing, ticker)
-            print(f"  ✓ {filing['form']} déposé le {filing['filingDate']} -> {path}")
+            download_filing(cik, filing, ticker)
+            print(f"  ✓ NOUVEAU : {filing['form']} déposé le {filing['filingDate']} -> {out_path}")
+            new_count += 1
+
+    return new_count
 
 
 if __name__ == "__main__":
-    main()
+    count = main()
+    print(f"\n{count} nouveau(x) filing(s) téléchargé(s).")
