@@ -1,0 +1,49 @@
+question,ground_truth,generated_answer,correctness,faithfulness
+Quel a été le chiffre d'affaires total (net sales) d'Apple pour l'exercice fiscal 2024 ?,"391 035 millions de dollars (environ 391 milliards de dollars), pour l'exercice clos le 28 septembre 2024.","Le chiffre d'affaires total (net sales) d'Apple pour l'exercice fiscal 2024 était de **391 035 millions de dollars** (soit 391,035 milliards $).
+
+Source : [AAPL | 10-K déposé le 2025-10-31] (ligne ""Total net sales"" pour l'année 2024).",1.0,1.0
+Quel a été le chiffre d'affaires total d'Apple en 2023 ?,"383 285 millions de dollars (environ 383,3 milliards de dollars), pour l'exercice clos le 30 septembre 2023.","Le chiffre d'affaires total d'Apple en 2023 était de **383 285 millions de dollars** (soit 383,285 milliards $).
+
+Source : [AAPL | 10-K déposé le 2024-11-01] et [AAPL | 10-K déposé le 2025-10-31].",1.0,1.0
+Quel a été le chiffre d'affaires généré par l'iPhone pour Apple en 2024 ?,"201 183 millions de dollars (environ 201,2 milliards de dollars) pour l'exercice fiscal 2024.","Le chiffre d'affaires généré par l'iPhone pour Apple en 2024 a été de **201 183 millions de dollars** (soit 201,183 milliards $).
+
+Source : [AAPL | 10-K déposé le 2024-11-01] (extrait du tableau des ventes par produit).",1.0,1.0
+Quel a été le chiffre d'affaires du segment Services d'Apple en 2024 ?,"96 169 millions de dollars (environ 96,2 milliards de dollars) pour l'exercice fiscal 2024.",Le chiffre d'affaires du segment **Services** d'Apple en **2024** a été de **96 169 millions de dollars** (source : [AAPL | 10-K déposé le 2024-11-01]).,1.0,1.0
+Quel a été le chiffre d'affaires total de Microsoft pour l'exercice fiscal 2025 ?,"Environ 281,7 milliards de dollars pour l'exercice clos le 30 juin 2025, en hausse d'environ 15% par rapport à l'exercice 2024.","Le chiffre d'affaires total de Microsoft pour l'exercice fiscal 2025 était de **281 724 millions de dollars** (soit 281,724 milliards $).
+
+Source : [MSFT | 10-K déposé le 2026-07-29] (tableau des revenus par segment).",1.0,1.0
+Quel a été le revenu net (net revenue) de JPMorgan Chase pour l'année 2025 ?,Environ 185 milliards de dollars de revenu net pour l'année complète 2025.,Le revenu net (Total net revenue) de JPMorgan Chase pour l'année 2025 était de **182 447 millions de dollars** (source : JPM | 10-K déposé le 2026-02-13).,1.0,1.0
+Quel a été le résultat net (net income) de JPMorgan Chase pour l'année 2025 ?,"57,0 milliards de dollars de résultat net pour l'année complète 2025.","Le résultat net (net income) de JPMorgan Chase pour l'année 2025 a été de **57,0 milliards de dollars** (JPM | 10-K déposé le 2026-02-13).
+
+Source :
+- Extrait du tableau financier : *""Net income, 57048""* (en millions, soit 57,048 milliards).
+- Confirmation dans la section *Firmwide overview* : *""JPMorganChase reported net income of $57.0 billion for 2025""*.",1.0,1.0
+Quels sont les principaux facteurs de risque identifiés par Apple dans son 10-K le plus récent ?,"Entre autres : une concurrence mondiale intense dans la tech, une dépendance à une chaîne d'approvisionnement géographiquement concentrée (exposée aux tensions géopolitiques), un examen réglementaire et juridique croissant (ex. droit de la concurrence et régulations numériques dans l'UE), des risques de cybersécurité, et une dépendance au succès continu des nouveaux produits et services.","L'information sur les **principaux facteurs de risque** identifiés par Apple n'est **pas mentionnée** dans les extraits fournis.
+
+Les sections partagées concernent uniquement :
+- Le statut de *shell company* (non applicable pour Apple).
+- La valeur marchande des actions et le nombre d'actions en circulation (AAPL, 10-K déposé le **2025-10-31**).
+- Les signatures et pouvoirs d'attorney (pour les rapports 2024 et 2025).
+
+Pour obtenir cette information, il faudrait consulter la **Section ""Item 1A. Risk Factors""** du 10-K complet d'Apple, qui n'est pas incluse ici.",0.0,1.0
+Quels sont les principaux moteurs de la croissance du chiffre d'affaires de Microsoft pour l'exercice fiscal 2025 selon son 10-K ?,"La croissance a été tirée principalement par le cloud et l'intelligence artificielle : Microsoft Cloud a augmenté d'environ 23% pour atteindre 168,9 milliards de dollars, porté notamment par Azure (+34%).","L'information demandée sur les principaux moteurs de la croissance du chiffre d'affaires de Microsoft pour l'exercice fiscal 2025 **n'est pas clairement mentionnée** dans les extraits fournis.
+
+Les extraits disponibles concernent principalement :
+- Le 10-K de 2026 (dépôt du 2026-07-29) avec des données sur l'exercice 2026 (ex. : croissance du cloud à +27%).
+- Le 10-K de 2025 (dépôt du 2025-07-30) sans détail sur les moteurs de croissance pour 2025.
+
+Pour obtenir cette information, il faudrait consulter la section **""Management’s Discussion and Analysis of Financial Condition and Results of Operations""** du 10-K de 2025, qui n'est pas incluse dans les extraits.
+
+**Réponse :** *L'information n'est pas disponible dans les extraits fournis.*",0.0,0.0
+Quels sont les trois principaux segments d'activité de JPMorgan Chase ?,"Consumer & Community Banking (CCB), Commercial & Investment Bank (CIB), et Asset & Wealth Management (AWM).","Les trois principaux segments d'activité de JPMorgan Chase sont :
+- **Consumer & Community Banking (CCB)**
+- **Commercial & Investment Bank (CIB)**
+- **Asset & Wealth Management (AWM)**
+
+Source : [JPM | 10-K déposé le 2026-02-13], Section Item 1 - Business et Section Item 15.",1.0,1.0
+"Entre Apple et Microsoft, laquelle des deux entreprises a eu le chiffre d'affaires le plus élevé lors de son exercice fiscal 2024 ?","Apple, avec 391 035 millions de dollars pour son exercice fiscal 2024 (clos en septembre 2024), contre environ 245,1 milliards de dollars pour Microsoft sur son exercice fiscal 2024 (clos le 30 juin 2024).","D'après les extraits fournis, **il n'est pas possible de déterminer quelle entreprise a eu le chiffre d'affaires le plus élevé en 2024**, car :
+
+- Pour **Apple (AAPL | 10-K déposé le 2024-11-01)**, les extraits mentionnent des détails sur les produits lancés et les performances par segment, mais **aucun chiffre global de chiffre d'affaires (net sales) n'est fourni**.
+- Pour **Microsoft (MSFT | 10-K déposé le 2026-07-29)**, les données concernent l'exercice **2026** (comparaison avec 2025), et non 2024. Aucun chiffre pour 2024 n'est disponible dans les extraits.
+
+**Réponse** : L'information n'est pas présente dans les extraits fournis.",0.0,1.0

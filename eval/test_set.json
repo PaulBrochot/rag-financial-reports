@@ -1,0 +1,46 @@
+[
+  {
+    "question": "Quel a été le chiffre d'affaires total (net sales) d'Apple pour l'exercice fiscal 2024 ?",
+    "ground_truth": "391 035 millions de dollars (environ 391 milliards de dollars), pour l'exercice clos le 28 septembre 2024."
+  },
+  {
+    "question": "Quel a été le chiffre d'affaires total d'Apple en 2023 ?",
+    "ground_truth": "383 285 millions de dollars (environ 383,3 milliards de dollars), pour l'exercice clos le 30 septembre 2023."
+  },
+  {
+    "question": "Quel a été le chiffre d'affaires généré par l'iPhone pour Apple en 2024 ?",
+    "ground_truth": "201 183 millions de dollars (environ 201,2 milliards de dollars) pour l'exercice fiscal 2024."
+  },
+  {
+    "question": "Quel a été le chiffre d'affaires du segment Services d'Apple en 2024 ?",
+    "ground_truth": "96 169 millions de dollars (environ 96,2 milliards de dollars) pour l'exercice fiscal 2024."
+  },
+  {
+    "question": "Quel a été le chiffre d'affaires total de Microsoft pour l'exercice fiscal 2025 ?",
+    "ground_truth": "Environ 281,7 milliards de dollars pour l'exercice clos le 30 juin 2025, en hausse d'environ 15% par rapport à l'exercice 2024."
+  },
+  {
+    "question": "Quel a été le revenu net (net revenue) de JPMorgan Chase pour l'année 2025 ?",
+    "ground_truth": "Environ 185 milliards de dollars de revenu net pour l'année complète 2025."
+  },
+  {
+    "question": "Quel a été le résultat net (net income) de JPMorgan Chase pour l'année 2025 ?",
+    "ground_truth": "57,0 milliards de dollars de résultat net pour l'année complète 2025."
+  },
+  {
+    "question": "Quels sont les principaux facteurs de risque identifiés par Apple dans son 10-K le plus récent ?",
+    "ground_truth": "Entre autres : une concurrence mondiale intense dans la tech, une dépendance à une chaîne d'approvisionnement géographiquement concentrée (exposée aux tensions géopolitiques), un examen réglementaire et juridique croissant (ex. droit de la concurrence et régulations numériques dans l'UE), des risques de cybersécurité, et une dépendance au succès continu des nouveaux produits et services."
+  },
+  {
+    "question": "Quels sont les principaux moteurs de la croissance du chiffre d'affaires de Microsoft pour l'exercice fiscal 2025 selon son 10-K ?",
+    "ground_truth": "La croissance a été tirée principalement par le cloud et l'intelligence artificielle : Microsoft Cloud a augmenté d'environ 23% pour atteindre 168,9 milliards de dollars, porté notamment par Azure (+34%)."
+  },
+  {
+    "question": "Quels sont les trois principaux segments d'activité de JPMorgan Chase ?",
+    "ground_truth": "Consumer & Community Banking (CCB), Commercial & Investment Bank (CIB), et Asset & Wealth Management (AWM)."
+  },
+  {
+    "question": "Entre Apple et Microsoft, laquelle des deux entreprises a eu le chiffre d'affaires le plus élevé lors de son exercice fiscal 2024 ?",
+    "ground_truth": "Apple, avec 391 035 millions de dollars pour son exercice fiscal 2024 (clos en septembre 2024), contre environ 245,1 milliards de dollars pour Microsoft sur son exercice fiscal 2024 (clos le 30 juin 2024)."
+  }
+]
