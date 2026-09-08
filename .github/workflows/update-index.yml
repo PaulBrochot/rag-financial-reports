@@ -6,6 +6,9 @@ on:
     - cron: "0 6 * * 1"
   workflow_dispatch: {}  # permet aussi de le lancer manuellement depuis l'onglet Actions
 
+permissions:
+  contents: write  # nécessaire pour que le workflow puisse committer le corpus mis à jour
+
 jobs:
   update:
     runs-on: ubuntu-latest
