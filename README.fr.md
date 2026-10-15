@@ -1,5 +1,10 @@
 [🇬🇧 English](README.md) | 🇫🇷 Français
 
+> ⚠️ **Note :** j'ai construit ce projet avec une aide importante d'outils d'IA, pour
+> découvrir comment s'assemble un système RAG complet, une compétence clé pour un
+> ingénieur data/IA. Je suis en train de le reprendre pour en comprendre chaque
+> partie (embeddings, recherche vectorielle, évaluation par LLM).
+> 
 # RAG sur rapports financiers (S&P 500)
 
 Système de question-réponse basé sur les 10-K d'entreprises cotées (Apple, Microsoft,
