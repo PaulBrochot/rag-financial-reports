@@ -1,5 +1,10 @@
 🇬🇧 English | [🇫🇷 Français](README.fr.md)
 
+> ⚠️ **Note:** I built this project with heavy help from AI tools, to explore how a
+> complete RAG system is put together, since it's a core skill for AI/data engineers.
+> I'm now working through it to understand every part (embeddings, vector search,
+> LLM-based evaluation).
+> 
 # RAG on Financial Reports (S&P 500)
 
 A question-answering system built on 10-K filings from publicly traded companies
